@@ -1,18 +1,28 @@
 <?php
 
 /*
+/*
  *
- *  _____            _               _____           
- * / ____|          (_)             |  __ \          
- *| |  __  ___ _ __  _ ___ _   _ ___| |__) | __ ___  
- *| | |_ |/ _ \ '_ \| / __| | | / __|  ___/ '__/ _ \ 
+ * __  __            _            _     _       _     _
+ *|  \/  | __ _ _ __(_)_ __   ___| |   (_) __ _| |__ | |_ 
+ *| |\/| |/ _` | '__| | '_ \ / _ \ |   | |/ _` | '_ \| __|
+ *| |  | | (_| | |  | | | | |  __/ |___| | (_| | | | | |_ 
+ *|_|  |_|\__,_|_|  |_|_| |_|\___|_____|_|\__, |_| |_|\__|
+ *                                        |___/
+ * == SH - MarineTeam ==
+ * == http://marine.otos.red ==
+ *
+ *  _____            _               _____
+ * / ____|          (_)             |  __ \
+ *| |  __  ___ _ __  _ ___ _   _ ___| |__) | __ ___
+ *| | |_ |/ _ \ '_ \| / __| | | / __|  ___/ '__/ _ \
  *| |__| |  __/ | | | \__ \ |_| \__ \ |   | | | (_) |
- * \_____|\___|_| |_|_|___/\__, |___/_|   |_|  \___/ 
- *                         __/ |                    
- *                        |___/                     
+ * \_____|\___|_| |_|_|___/\__, |___/_|   |_|  \___/
+ *                         __/ |
+ *                        |___/
  *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
+ * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
@@ -78,7 +88,7 @@ namespace pocketmine {
 
 	const VERSION = "1.1dev";
 	const API_VERSION = "3.0.1";
-	const CODENAME = "LlamaSpit";
+	const CODENAME = "Moon";
 	const GENISYS_API_VERSION = '2.0.0';
 
 	/*
@@ -398,7 +408,7 @@ namespace pocketmine {
 	$errors = 0;
 
 	if(php_sapi_name() !== "cli"){
-		$logger->critical("You must run GenisysPro using the CLI.");
+		$logger->critical("You must run MarineLight using the CLI.");
 		++$errors;
 	}
 
@@ -422,16 +432,16 @@ namespace pocketmine {
 
 	if(extension_loaded("pocketmine")){
 		if(version_compare(phpversion("pocketmine"), "0.0.1") < 0){
-			$logger->critical("You have the native GenisysPro extension, but your version is lower than 0.0.1.");
+			$logger->critical("You have the native MarineLight extension, but your version is lower than 0.0.1.");
 			++$errors;
 		}elseif(version_compare(phpversion("pocketmine"), "0.0.4") > 0){
-			$logger->critical("You have the native GenisysPro extension, but your version is higher than 0.0.4.");
+			$logger->critical("You have the native MarineLight extension, but your version is higher than 0.0.4.");
 			++$errors;
 		}
 	}
 
 	if(extension_loaded("xdebug")){
-		$logger->warning("You are running GenisysPro with Xdebug enabled. This has a major impact on performance.");
+		$logger->warning("You are running MarineLight with Xdebug enabled. This has a major impact on performance.");
 	}
 
 	if(!extension_loaded("curl")){
@@ -485,7 +495,7 @@ namespace pocketmine {
 	}
 
 	if(\Phar::running(true) === ""){
-		$logger->warning("Non-packaged GenisysPro installation detected, do not use on production.");
+		$logger->warning("Non-packaged MarineLight installation detected, do not use on production.");
 	}
 
 	ThreadManager::init();

@@ -329,7 +329,7 @@ class Server{
 	 * @return string
 	 */
 	public function getName() : string{
-		return "GenisysPro";
+		return "MarineLight";
 	}
 
 	/**
@@ -1532,23 +1532,17 @@ class Server{
 	 $version = implode(",",ProtocolInfo::MINECRAFT_VERSION);
 		$string = "
 
-  _____            _               _____
- / ____|          (_)             |  __ \
-| |  __  ___ _ __  _ ___ _   _ ___| |__) | __ ___
-| | |_ |/ _ \ '_ \| / __| | | / __|  ___/ '__/ _ \
-| |__| |  __/ | | | \__ \ |_| \__ \ |   | | | (_) |
- \_____|\___|_| |_|_|___/\__, |___/_|   |_|  \___/
-                          __/ |
-                         |___/
-
+		 __  __            _            _     _       _     _
+		|  \/  | __ _ _ __(_)_ __   ___| |   (_) __ _| |__ | |_ 
+		| |\/| |/ _` | '__| | '_ \ / _ \ |   | |/ _` | '_ \| __|
+		| |  | | (_| | |  | | | | |  __/ |___| | (_| | | | | |_ 
+		|_|  |_|\__,_|_|  |_|_| |_|\___|_____|_|\__, |_| |_|\__|
+																						|___/
+																						
 	Version: §6" . $this->getPocketMineVersion() . ' (' . $this->getShortGitCommit() . ')§f
 	Client Version: §b' . $version . '§f
 	PHP Version: §e' . PHP_VERSION . '§f
 	OS: §6' . PHP_OS .'§f
-	This core is maintained by §dGenisysPro§f (https://github.com/GenisysPro)
-	Discord Group chat: §ehttps://discord.gg/WrKzRNn §f
-	Chatroom on QQ: §a559301590 §f
-	Welcome to donate us on QQ: §c1912003473
 	';
 
 		$this->getLogger()->info($string);
@@ -2427,8 +2421,8 @@ class Server{
 
 		$this->logger->info($this->getLanguage()->translateString("pocketmine.server.startFinished", [round(microtime(true) - \pocketmine\START_TIME, 3)]));
 
-		if(!file_exists($this->getPluginPath() . DIRECTORY_SEPARATOR . "GenisysPro"))
-			@mkdir($this->getPluginPath() . DIRECTORY_SEPARATOR . "GenisysPro");
+		if(!file_exists($this->getPluginPath() . DIRECTORY_SEPARATOR . "MarineLight"))
+			@mkdir($this->getPluginPath() . DIRECTORY_SEPARATOR . "MarineLight");
 
 		$this->tickProcessor();
 		$this->forceShutdown();
