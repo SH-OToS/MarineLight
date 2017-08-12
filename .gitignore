@@ -9,8 +9,6 @@ resource_packs/*
 *.phar
 server.properties
 /pocketmine.yml
-/src/raklib/*
-/src/spl/*
 
 # Windows image file caches
 Thumbs.db
