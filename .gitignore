@@ -1,0 +1,27 @@
+players/*
+worlds/*
+plugins/*
+bin/*
+timings/*
+resource_packs/*
+*.log
+*.txt
+*.phar
+server.properties
+/pocketmine.yml
+/src/raklib/*
+/src/spl/*
+
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Mac crap
+.DS_Store
+/nbproject/private/
+
+# Sphinx-doc
+/docs/build/
+!/docs/requirements.txt
