@@ -152,10 +152,14 @@ namespace pocketmine {
 		mkdir(\pocketmine\DATA, 0777, true);
 	}
 
+	if(!file_exists(\pocketmine\DATA . "serverLogs")){
+		mkdir(\pocketmine\DATA . 'serverLogs', 0777, true);
+	}
+
 	//Logger has a dependency on timezone, so we'll set it to UTC until we can get the actual timezone.
 	date_default_timezone_set("UTC");
 
-	$logger = new MainLogger(\pocketmine\DATA . "server.log", \pocketmine\ANSI);
+	$logger = new MainLogger(\pocketmine\DATA . "serverLogs/" . date("Y\-m\-d") . ".log", \pocketmine\ANSI);
 
 	if(!ini_get("date.timezone")){
 		if(($timezone = detect_system_timezone()) and date_default_timezone_set($timezone)){
