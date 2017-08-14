@@ -1531,14 +1531,14 @@ class Server{
 	public function about(){
 	 $version = implode(",",ProtocolInfo::MINECRAFT_VERSION);
 		$string = "
-
-		 __  __            _            _     _       _     _
-		|  \/  | __ _ _ __(_)_ __   ___| |   (_) __ _| |__ | |_ 
-		| |\/| |/ _` | '__| | '_ \ / _ \ |   | |/ _` | '_ \| __|
-		| |  | | (_| | |  | | | | |  __/ |___| | (_| | | | | |_ 
-		|_|  |_|\__,_|_|  |_|_| |_|\___|_____|_|\__, |_| |_|\__|
-		                                        |___/
-																						
+		§b
+		 __  __            _            §e _     _       _     _   §b
+		|  \/  | __ _ _ __(_)_ __   ___ §e| |   (_) __ _| |__ | |_ §b
+		| |\/| |/ _` | '__| | '_ \ / _ \§e| |   | |/ _` | '_ \| __|§b
+		| |  | | (_| | |  | | | | |  __/§e| |___| | (_| | | | | |_ §b
+		|_|  |_|\__,_|_|  |_|_| |_|\___|§e|_____|_|\__, |_| |_|\__|§b
+		                                §e         |___/
+		§f
 	Version: §6" . $this->getPocketMineVersion() . ' (' . $this->getShortGitCommit() . ')§f
 	Client Version: §b' . $version . '§f
 	PHP Version: §e' . PHP_VERSION . '§f
@@ -1736,6 +1736,9 @@ class Server{
 			$this->properties = new Config($this->dataPath . "server.properties", Config::PROPERTIES, [
 				"motd" => "Minecraft: PE Server",
 				"server-port" => 19132,
+				"white-list" => false,
+				"sp-log" => true,
+				"fall-damage" => true,
 				"white-list" => false,
 				"announce-player-achievements" => true,
 				"spawn-protection" => 16,
