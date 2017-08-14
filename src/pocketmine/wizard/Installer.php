@@ -1,6 +1,14 @@
 <?php
 
 /*
+ *  __  __            _            _     _       _     _
+ * |  \/  | __ _ _ __(_)_ __   ___| |   (_) __ _| |__ | |_ 
+ * | |\/| |/ _` | '__| | '_ \ / _ \ |   | |/ _` | '_ \| __|
+ * | |  | | (_| | |  | | | | |  __/ |___| | (_| | | | | |_ 
+ * |_|  |_|\__,_|_|  |_|_| |_|\___|_____|_|\__, |_| |_|\__|
+ *                                        |___/
+ * == SH - MarineTeam ==
+ * == http://marine.otos.red ==
  *
  *  ____            _        _   __  __ _                  __  __ ____
  * |  _ \ ___   ___| | _____| |_|  \/  (_)_ __   ___      |  \/  |  _ \
@@ -60,7 +68,7 @@ class Installer {
 	 * @return bool
 	 */
 	public function run(){
-		echo "[*] GenisysPro set-up wizard\n";
+		echo "[*] MarineLight set-up wizard\n";
 		echo "[*] Please select a language:\n";
 		foreach(InstallerLang::$languages as $short => $native){
 			echo " $native => $short\n";
@@ -216,6 +224,23 @@ LICENSE;
 			$config->set("white-list", false);
 		}
 		$config->save();
+
+
+		// Marine
+		echo "[*] " . $this->lang->sp_log1;
+		echo "[?] " . $this->lang->sp_log1 . " (y/N): ";
+		if(strtolower($this->getInput("n")) === "n"){
+			$config->set("sp-log", "on");
+		}else{
+			$config->set("sp-log", "off");
+		}
+
+		echo $this->lang->fall_damage . " (y/N): ";
+		if(strtolower($this->getInput("n")) === "n"){
+			$config->set("sp-log", "off");
+		}else{
+			$config->set("sp-log", "on");
+		}
 	}
 
 	private function networkFunctions(){
