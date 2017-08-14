@@ -223,16 +223,13 @@ LICENSE;
 		}else{
 			$config->set("white-list", false);
 		}
-		$config->save();
-
-
 		// Marine
 		echo "[*] " . $this->lang->sp_log1;
 		echo "[?] " . $this->lang->sp_log1 . " (y/N): ";
 		if(strtolower($this->getInput("n")) === "n"){
-			$config->set("sp-log", "on");
+			$config->set("fall-damage", "on");
 		}else{
-			$config->set("sp-log", "off");
+			$config->set("fall-damage", "off");
 		}
 
 		echo $this->lang->fall_damage . " (y/N): ";
@@ -241,6 +238,8 @@ LICENSE;
 		}else{
 			$config->set("sp-log", "on");
 		}
+
+		$config->save();
 	}
 
 	private function networkFunctions(){
