@@ -9,6 +9,7 @@ resource_packs/*
 *.phar
 server.properties
 /pocketmine.yml
+/marine.yml
 
 # Windows image file caches
 Thumbs.db
