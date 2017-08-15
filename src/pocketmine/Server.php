@@ -1539,8 +1539,10 @@ class Server{
 		|_|  |_|\__,_|_|  |_|_| |_|\___|§e|_____|_|\__, |_| |_|\__|§b
 		                                §e         |___/
 		§f
+	
 	Version: §6" . $this->getPocketMineVersion() . ' (' . $this->getShortGitCommit() . ')§f
 	Client Version: §b' . $version . '§f
+	Code Name: ' . $this->getCodename() . '
 	PHP Version: §e' . PHP_VERSION . '§f
 	OS: §6' . PHP_OS .'§f
 	';
