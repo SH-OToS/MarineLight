@@ -224,19 +224,19 @@ LICENSE;
 			$config->set("white-list", false);
 		}
 		// Marine
-		echo "[*] " . $this->lang->sp_log1;
-		echo "[?] " . $this->lang->sp_log1 . " (y/N): ";
-		if(strtolower($this->getInput("n")) === "n"){
-			$config->set("fall-damage", "on");
-		}else{
-			$config->set("fall-damage", "off");
-		}
-
-		echo $this->lang->fall_damage . " (y/N): ";
+		echo "[*] " . $this->lang->sp_log1 . '\n';
+		echo "[?] " . $this->lang->sp_log2 . " (y/N): ";
 		if(strtolower($this->getInput("n")) === "n"){
 			$config->set("sp-log", "off");
 		}else{
 			$config->set("sp-log", "on");
+		}
+
+		echo '[?] ' . $this->lang->fall_damage . " (Y/n): ";
+		if(strtolower($this->getInput("n")) === "n"){
+			$config->set("fall-damage", "on");
+		}else{
+			$config->set("fall-damage", "off");
 		}
 
 		$config->save();
