@@ -1,6 +1,14 @@
 <?php
 
 /*
+ *  __  __            _            _     _       _     _
+ * |  \/  | __ _ _ __(_)_ __   ___| |   (_) __ _| |__ | |_ 
+ * | |\/| |/ _` | '__| | '_ \ / _ \ |   | |/ _` | '_ \| __|
+ * | |  | | (_| | |  | | | | |  __/ |___| | (_| | | | | |_ 
+ * |_|  |_|\__,_|_|  |_|_| |_|\___|_____|_|\__, |_| |_|\__|
+ *                                        |___/
+ * == SH - MarineTeam ==
+ * == http://marine.otos.red ==
  *
  *  ____            _        _   __  __ _                  __  __ ____
  * |  _ \ ___   ___| | _____| |_|  \/  (_)_ __   ___      |  \/  |  _ \
@@ -14,10 +22,10 @@
  * (at your option) any later version.
  *
  * @author PocketMine Team
- * @link   http://www.pocketmine.net/
+ * @link http://www.pocketmine.net/
  *
  *
- */
+*/
 
 namespace pocketmine\event\block;
 
@@ -25,6 +33,7 @@ use pocketmine\block\Block;
 use pocketmine\event\Cancellable;
 use pocketmine\item\Item;
 use pocketmine\Player;
+use pocketmine\Server;
 
 class BlockBreakEvent extends BlockEvent implements Cancellable {
 	public static $handlerList = null;
@@ -48,6 +57,7 @@ class BlockBreakEvent extends BlockEvent implements Cancellable {
 	 * @param bool   $instaBreak
 	 */
 	public function __construct(Player $player, Block $block, Item $item, $instaBreak = false){
+		$this->server = Server::getInstance();
 		$this->block = $block;
 		$this->item = $item;
 		$this->player = $player;
@@ -59,6 +69,9 @@ class BlockBreakEvent extends BlockEvent implements Cancellable {
 			foreach($drops as $i){
 				$this->blockDrops[] = Item::get($i[0], $i[1], $i[2]);
 			}
+		if($this->server->getConfigBoolean("sp-log")){
+				$this->server->getLogger()->info('Break PLAYER-NAME:' . $this->player->getName() . ' ITEM-ID:' . $this->item->getID() . ' BLOCK-ID:' . $this->block->getID() . ' X:' . $this->block->getX() . ' Y:' . $this->block->getY() . ' Z:' . $this->block->getZ());
+		}
 	}
 
 	/**

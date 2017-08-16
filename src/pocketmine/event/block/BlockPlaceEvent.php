@@ -25,6 +25,7 @@ use pocketmine\block\Block;
 use pocketmine\event\Cancellable;
 use pocketmine\item\Item;
 use pocketmine\Player;
+use pocketmine\Server;
 
 /**
  * Called when a player places a block
@@ -52,11 +53,15 @@ class BlockPlaceEvent extends BlockEvent implements Cancellable {
 	 * @param Item   $item
 	 */
 	public function __construct(Player $player, Block $blockPlace, Block $blockReplace, Block $blockAgainst, Item $item){
+		$this->server = Server::getInstance();
 		$this->block = $blockPlace;
 		$this->blockReplace = $blockReplace;
 		$this->blockAgainst = $blockAgainst;
 		$this->item = $item;
 		$this->player = $player;
+		if($this->server->getConfigBoolean("sp-log")){
+			$this->server->getLogger()->info('Place PLAYER-NAME:' . $this->player->getName() . ' ITEM-ID:' . $this->item->getID() . ' BLOCK-ID:' . $this->block->getID() . ' X:' . $this->block->getX() . ' Y:' . $this->block->getY() . ' Z:' . $this->block->getZ());
+		}
 	}
 
 	/**

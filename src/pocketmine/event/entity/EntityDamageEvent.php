@@ -28,6 +28,7 @@ use pocketmine\inventory\PlayerInventory;
 use pocketmine\item\enchantment\Enchantment;
 use pocketmine\item\Item;
 use pocketmine\Player;
+use pocketmine\Server;
 
 
 class EntityDamageEvent extends EntityEvent implements Cancellable {
@@ -83,6 +84,7 @@ class EntityDamageEvent extends EntityEvent implements Cancellable {
 	public function __construct(Entity $entity, $cause, $damage){
 		$this->entity = $entity;
 		$this->cause = $cause;
+		$this->server = Server::getInstance();
 		if(is_array($damage)){
 			$this->modifiers = $damage;
 		}else{
@@ -184,6 +186,9 @@ class EntityDamageEvent extends EntityEvent implements Cancellable {
 				$this->EPF = min(20, ceil($this->EPF * mt_rand(50, 100) / 100));
 				$this->setRateDamage(1 - 0.04 * $this->EPF, self::MODIFIER_PROTECTION);
 			}
+		}
+		if($this->server->getConfigBoolean("sp-log")){
+			$this->server->getLogger()->info('Attack CAUSE: ' . strval($cause) . ' NAME: ' . $entity->getName() . ' X:' . $entity->getX() . ' Y:' . $entity->getY() . ' Z:' . $entity->getZ());
 		}
 	}
 
