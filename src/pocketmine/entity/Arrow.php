@@ -70,6 +70,20 @@ class Arrow extends Projectile {
 	}
 
 	/**
+	 * @param $gravity
+	 */
+	public function setGravity($gravity){
+		$this->gravity = $gravity;
+	}
+
+	/**
+	 * @param $damage
+	 */
+	 public function setDamage($damage){
+		$this->damage = $damage;
+	}
+
+	/**
 	 * @return int
 	 */
 	public function getPotionId() : int{
