@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is the start.sh file for Genisys
+# This is the start.sh file for MarineLight
 # Please input ./start.sh to start server
 
 # Variable define
@@ -57,7 +57,7 @@ if [ "$POCKETMINE_FILE" == "" ]; then
 	elif [ -f ./src/pocketmine/PocketMine.php ]; then
 		POCKETMINE_FILE="./src/pocketmine/PocketMine.php"
 	else
-		echo "[ERROR] Couldn't find a valid Genisys installation."
+		echo "[ERROR] Couldn't find a valid MarineLight installation."
 		exit 1
 	fi
 fi

@@ -1707,7 +1707,7 @@ class Server{
 			}
 
 			$lang = $this->getProperty("settings.language", BaseLang::FALLBACK_LANGUAGE);
-			if(file_exists($this->filePath . "src/pocketmine/resources/genisys_$lang.yml")){
+			if(file_exists($this->filePath . "src/pocketmine/resources/marine_$lang.yml")){
 				$content = file_get_contents($file = $this->filePath . "src/pocketmine/resources/marine_$lang.yml");
 			}else{
 				$content = file_get_contents($file = $this->filePath . "src/pocketmine/resources/marine_eng.yml");
@@ -1984,7 +1984,7 @@ class Server{
 			]), $this->dserverConfig["timer"]);
 
 			if($cfgVer > $advVer){
-				$this->logger->notice("Your genisys.yml needs update");
+				$this->logger->notice("Your marine.yml needs update");
 				$this->logger->notice("Current Version: $advVer   Latest Version: $cfgVer");
 			}
 
