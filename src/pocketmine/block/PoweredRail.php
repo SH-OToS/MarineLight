@@ -50,6 +50,13 @@ class PoweredRail extends Rail {
 	/**
 	 * @return bool
 	 */
+	public function isPowered(){
+		return true;
+	}
+
+	/**
+	 * @return bool
+	 */
 	protected function update(){
 
 		return true;
