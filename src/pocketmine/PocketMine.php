@@ -2,12 +2,12 @@
 
 /*
  *
- * __  __            _            _     _       _     _
- *|  \/  | __ _ _ __(_)_ __   ___| |   (_) __ _| |__ | |_ 
- *| |\/| |/ _` | '__| | '_ \ / _ \ |   | |/ _` | '_ \| __|
- *| |  | | (_| | |  | | | | |  __/ |___| | (_| | | | | |_ 
- *|_|  |_|\__,_|_|  |_|_| |_|\___|_____|_|\__, |_| |_|\__|
- *                                        |___/
+ *  __  __            _            _     _       _     _
+ * |  \/  | __ _ _ __(_)_ __   ___| |   (_) __ _| |__ | |_ 
+ * | |\/| |/ _` | '__| | '_ \ / _ \ |   | |/ _` | '_ \| __|
+ * | |  | | (_| | |  | | | | |  __/ |___| | (_| | | | | |_ 
+ * |_|  |_|\__,_|_|  |_|_| |_|\___|_____|_|\__, |_| |_|\__|
+ *                                          |___/
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -17,7 +17,7 @@
  * @auther SH - MarineTeam
  * @link http://marine.otos.red
  *
-*/
+ */
 
 namespace {
 	function safe_var_dump(){

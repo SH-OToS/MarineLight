@@ -2,12 +2,12 @@
 
 /*
  *
- * __  __            _            _     _       _     _
- *|  \/  | __ _ _ __(_)_ __   ___| |   (_) __ _| |__ | |_ 
- *| |\/| |/ _` | '__| | '_ \ / _ \ |   | |/ _` | '_ \| __|
- *| |  | | (_| | |  | | | | |  __/ |___| | (_| | | | | |_ 
- *|_|  |_|\__,_|_|  |_|_| |_|\___|_____|_|\__, |_| |_|\__|
- *                                        |___/
+ *  __  __            _            _     _       _     _
+ * |  \/  | __ _ _ __(_)_ __   ___| |   (_) __ _| |__ | |_ 
+ * | |\/| |/ _` | '__| | '_ \ / _ \ |   | |/ _` | '_ \| __|
+ * | |  | | (_| | |  | | | | |  __/ |___| | (_| | | | | |_ 
+ * |_|  |_|\__,_|_|  |_|_| |_|\___|_____|_|\__, |_| |_|\__|
+ *                                         |___/
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -17,7 +17,7 @@
  * @auther SH - MarineTeam
  * @link http://marine.otos.red
  *
-*/
+ */
 
 namespace pocketmine;
 
@@ -58,6 +58,7 @@ use pocketmine\level\generator\hell\Nether;
 use pocketmine\level\generator\normal\Normal;
 use pocketmine\level\generator\normal\Normal2;
 use pocketmine\level\generator\Void;
+use pocketmine\level\generator\Sky;
 use pocketmine\level\Level;
 use pocketmine\level\LevelException;
 use pocketmine\metadata\EntityMetadataStore;
@@ -1907,6 +1908,7 @@ class Server{
 			Generator::addGenerator(Normal::class, "default");
 			Generator::addGenerator(Nether::class, "hell");
 			Generator::addGenerator(Nether::class, "nether");
+			Generator::addGenerator(Sky::class, "sky");
 			Generator::addGenerator(Void::class, "void");
 			Generator::addGenerator(Normal2::class, "normal2");
 			Generator::addGenerator(Ender::class, "ender");
