@@ -425,6 +425,13 @@ class Server{
 	/**
 	 * @return string
 	 */
+	 public function getMarineApiVersion(){
+		return \pocketmine\MARINE_API_VERSION;
+	 }
+
+	/**
+	 * @return string
+	 */
 	public function getFilePath(){
 		return $this->filePath;
 	}
