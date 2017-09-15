@@ -7,7 +7,8 @@
 ## 新たなワールドタイプ  
 ### Sky  
  - 空島が生成されます  
- - 設置ブロックはノーマルと同じです  
+ - 設置されるブロックの種類はノーマルと同じです  
+ - 地形がエンドのような空島になります  
  - server.propertiesのlevel-typeにskyと記述すると使用できます  
 ___
 [Marine Project](http://marine.otos.red)
